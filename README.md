@@ -8,6 +8,13 @@ The solution combines predictive modeling, financial cost analysis, and explaina
 
 ---
 
+## Data Source
+
+This project uses the "Credit Risk Dataset" from Kaggle. You can find the dataset here:
+[https://www.kaggle.com/datasets/laotse/credit-risk-dataset](https://www.kaggle.com/datasets/laotse/credit-risk-dataset)
+
+---
+
 ## Key Features
 
 ### Credit Risk Prediction
@@ -194,7 +201,7 @@ After cost-sensitive optimization and cross-validation analysis, a threshold of 
 
 ### Economic Impact
 
-Compared to the conventional threshold of **0.50**, the optimized threshold substantially reduces expected financial losses while maintaining strong approval performance.
+Compared to the default threshold of 0.50, the optimized threshold helps reduce losses from risky loans while maintaining strong lending performance.
 
 ### Stability Analysis
 
@@ -212,7 +219,7 @@ This indicates that the selected threshold remains robust across different data 
 
 ![Cost Optimization Framework](frontend/src/components/cost-optimization.png)
 
-Traditional classification models optimize metrics such as:
+Most classification models focus on prediction performance, measured by:
 
 - Accuracy
 - Precision
@@ -306,7 +313,7 @@ making **0.18** a practical and stable deployment choice.
 
 ### 3. Financial Trade-Off Optimization
 
-The threshold balances two competing objectives:
+The threshold is designed to balance risk and growth:
 
 #### Default Loss (False Negatives)
 
@@ -324,7 +331,7 @@ A safe borrower is incorrectly rejected.
 Cost = Loan Amount × 15%
 ```
 
-This creates a balanced lending strategy that protects profitability while supporting portfolio growth.
+This approach helps reduce losses while still approving enough good borrowers to support business growth.
 
 ---
 
@@ -373,20 +380,7 @@ These assets can be loaded directly into a backend service for real-time inferen
 
 ## Future Improvements
 
-- Real-time API deployment with FastAPI.
-- Interactive dashboard for credit officers.
-- Automated model monitoring and drift detection.
+- Add automated monitoring to track model performance over time.
 - Scenario-based loan simulation.
-- Fairness and bias auditing.
-- Alternative explainability methods beyond SHAP.
-
----
-
-## Author
-
-Developed as a practical machine learning project focused on:
-
-- Credit Risk Analytics
-- Explainable AI (XAI)
-- Financial Decision Optimization
-- Cost-Sensitive Machine Learning
+- Evaluate the model for fairness and potential bias.
+- Additional explainability methods beyond SHAP.
