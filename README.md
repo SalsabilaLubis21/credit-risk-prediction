@@ -45,15 +45,18 @@ This project uses the "Credit Risk Dataset" from Kaggle. You can find the datase
 
 ## Technology Stack
 
-| Category                | Tools                 |
-| ----------------------- | --------------------- |
-| Programming Language    | Python                |
-| Machine Learning        | Scikit-Learn, XGBoost |
-| Data Processing         | Pandas, NumPy         |
-| Visualization           | Matplotlib, Seaborn   |
-| Explainable AI          | SHAP                  |
-| Model Serialization     | Joblib                |
-| Development Environment | Google Colab          |
+| Category         | Technology                  |
+| ---------------- | --------------------------- |
+| **Backend**      |                             |
+| Language         | Python                      |
+| Web Framework    | FastAPI                     |
+| Machine Learning | Scikit-Learn, XGBoost, SHAP |
+| Data Processing  | Pandas, NumPy               |
+| **Frontend**     |                             |
+| Language         | TypeScript                  |
+| Framework        | React                       |
+| Styling          | Tailwind CSS                |
+| Build Tool       | Vite                        |
 
 ---
 
