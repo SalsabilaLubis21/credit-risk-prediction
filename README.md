@@ -208,9 +208,60 @@ This indicates that the selected threshold remains robust across different data 
 
 ---
 
-## Model Performance with Threshold 0.18
+## Financial Cost Optimization Framework
 
-![Model Performance](frontend/src/components/model-performence.png)
+![Cost Optimization Framework](frontend/src/components/cost-optimization.png)
+
+Traditional classification models optimize metrics such as:
+
+- Accuracy
+- Precision
+- Recall
+- F1-Score
+- ROC-AUC
+
+However, banks and lenders are mainly concerned with financial results.
+
+Therefore, this project uses a cost-sensitive approach to minimize expected financial losses
+
+### Cost Components
+
+#### False Negative (FN)
+
+The model approves a borrower who eventually defaults.
+
+```text
+Cost(FN) = Loan Amount × 0.60
+```
+
+Where:
+
+- 60% = Loss Given Default (LGD)
+
+#### False Positive (FP)
+
+The model rejects a borrower who would have repaid successfully.
+
+```text
+Cost(FP) = Loan Amount × 0.15
+```
+
+Where:
+
+- 15% = Estimated Interest Margin / Opportunity Cost
+
+### Total Cost Function
+
+```text
+Total Cost =
+Σ(False Negatives × LGD Cost)
++
+Σ(False Positives × Opportunity Cost)
+```
+
+The optimal threshold is selected by minimizing this total expected cost.
+
+---
 
 ## Why Was Threshold 0.18 Selected?
 
@@ -277,58 +328,9 @@ This creates a balanced lending strategy that protects profitability while suppo
 
 ---
 
-## Financial Cost Optimization Framework
+## Model Performance with Threshold 0.18
 
-![Cost Optimization Framework](frontend/src/components/cost-optimization.png)
-
-Traditional classification models optimize metrics such as:
-
-- Accuracy
-- Precision
-- Recall
-- F1-Score
-- ROC-AUC
-
-However, financial institutions are primarily concerned with **economic outcomes**.
-
-This project therefore implements a **Cost-Sensitive Decision Framework** that minimizes expected monetary loss.
-
-### Cost Components
-
-#### False Negative (FN)
-
-The model approves a borrower who eventually defaults.
-
-```text
-Cost(FN) = Loan Amount × 0.60
-```
-
-Where:
-
-- 60% = Loss Given Default (LGD)
-
-#### False Positive (FP)
-
-The model rejects a borrower who would have repaid successfully.
-
-```text
-Cost(FP) = Loan Amount × 0.15
-```
-
-Where:
-
-- 15% = Estimated Interest Margin / Opportunity Cost
-
-### Total Cost Function
-
-```text
-Total Cost =
-Σ(False Negatives × LGD Cost)
-+
-Σ(False Positives × Opportunity Cost)
-```
-
-The optimal threshold is selected by minimizing this total expected cost.
+![Model Performance](frontend/src/components/model-performence.png)
 
 ---
 
