@@ -381,6 +381,5 @@ These assets can be loaded directly into a backend service for real-time inferen
 ## Future Improvements
 
 - Add automated monitoring to track model performance over time.
-- Scenario-based loan simulation.
 - Evaluate the model for fairness and potential bias.
-- Additional explainability methods beyond SHAP.
+- Additional explainability methods besides SHAP.
